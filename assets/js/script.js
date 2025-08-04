@@ -163,53 +163,45 @@ observer.observe(contactSection);
 
 
 // Service Page
-        document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            // Observe all service cards
-            document.querySelectorAll('.truck-service-card').forEach(card => {
-                observer.observe(card);
-            });
-
-            // Observe all stat items
-            document.querySelectorAll('.truck-stat-item').forEach(stat => {
-                observer.observe(stat);
-            });
-
-            // Observe all testimonial cards
-            document.querySelectorAll('.truck-testimonial-card').forEach(testimonial => {
-                observer.observe(testimonial);
-            });
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
         });
+    }, { threshold: 0.1 });
+
+    // Observe all service cards
+    document.querySelectorAll('.truck-service-card').forEach(card => {
+        observer.observe(card);
+    });
+
+    // Observe all stat items
+    document.querySelectorAll('.truck-stat-item').forEach(stat => {
+        observer.observe(stat);
+    });
+
+    // Observe all testimonial cards
+    document.querySelectorAll('.truck-testimonial-card').forEach(testimonial => {
+        observer.observe(testimonial);
+    });
+});
 
 
 // Contact Page
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactItems = document.querySelectorAll('.primehaul-contact-item');
-            const contactForm = document.querySelector('.primehaul-contact-form');
-            
-            // Add delay for each contact item animation
-            contactItems.forEach((item, index) => {
-                item.style.animation = `fadeInUp 0.6s ease ${index * 0.1 + 0.2}s both`;
-            });
-            
-            // Animation for the form
-            contactForm.style.animation = "fadeInUp 0.8s ease 0.4s both";
-            
-            // Form submission handler
-            const form = document.querySelector('form');
-            if(form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for your message! Our team will contact you shortly.');
-                    form.reset();
-                });
-            }
-        });
+document.addEventListener('DOMContentLoaded', function () {
+    const contactItems = document.querySelectorAll('.primehaul-contact-item');
+    const contactForm = document.querySelector('.primehaul-contact-form');
+
+    // Add delay for each contact item animation
+    contactItems.forEach((item, index) => {
+        item.style.animation = `fadeInUp 0.6s ease ${index * 0.1 + 0.2}s both`;
+    });
+
+    // Animation for the form
+    contactForm.style.animation = "fadeInUp 0.8s ease 0.4s both";
+
+});
+
